@@ -13,6 +13,7 @@ The Pipez software is made up of three main components:
 - Pipes
 - CSVWriter
 
+# CSVReader
 The input CSV file is a comma-separated file made up of one or more lines, and each line can have any number of fields in them. 
 The CSV file is stored in a directory on the computer and the Pipez software can open the file and read its contents using the CSVReader component of the code.
 The CSVReader reads each line of the input file and creates a Block from this one line of data using the value it reads from each field and gives each field an identifier (or key/field name). So, a Block is effectively an array that contains the data of one line of the input file.
@@ -32,3 +33,5 @@ The third Block generate will have four values:
 (“C1”,”125”); (“C2”,”645”); (“C3”, “753”); (“C4”,”459”)
 
 The lines of the CSV file are read one at a time and the resulting Block is the input to the Pipeline.
+
+# Pipes
