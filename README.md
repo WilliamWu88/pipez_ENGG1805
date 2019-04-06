@@ -35,3 +35,15 @@ The third Block generate will have four values:
 The lines of the CSV file are read one at a time and the resulting Block is the input to the Pipeline.
 
 # Pipes
+A pipeline contains one or more pipes that transform the input Block into a new output Block.
+The input Block is one line at a time specified as key-value pairs. That is, every field has an identifier (a key or field name) and a value. The pipe takes this input, performs the specified transformation, depending on the type of pipe it is, and writes the output as a Block with the same structure of key-value pairs.
+
+For example, if the pipe used was the ReversePipe, which reverses the order of the fields the input and output would be as below:
+(“C1”,”monkey”); (“C2”,”cat”); (“C3”, “baboon”)
+-> (“C3”, “baboon”); (“C2”,”cat”); (“C1”,”monkey”)
+
+If another pipe is used in the pipeline, the output Block from the ReversePipe pipe will become the input for the next pipe. So for example, if the next pipe used was OddFieldsPipe the situation would be as below:
+(“C1”,”monkey”); (“C2”,”cat”); (“C3”, “baboon”)
+-> (“C3”, “baboon”); (“C2”,”cat”); (“C1”,”monkey”)
+-> (“C3”, “baboon”); (“C1”,”monkey”)
+
