@@ -105,7 +105,8 @@ Usage:
 To create a RenameFieldPipe that renames the fields as follows:
 - renames field named “C1” to “Column A”,
 - renames field named “C2” to “Column B”,
-- renames field named “C3” to “Column C”,
+- renames field named “C3” to “Column C”.
+
 RenameFieldsPipe.create(("C1","C2","C3"), ("Column A", "Column B", "Column C"));
 
 # FieldMatch Pipe
@@ -148,10 +149,12 @@ This writes all the final Blocks from the Pipeline as a CSV output file.
 
 
 # Sample Usage of pipez system
-1.Create a simple block
+1. Create a simple block
+
 SimpleBlock sb = new SimpleBlock();
 
-2.Adding data to the block
+2. Adding data to the block
+
 Method1: add() with field name and value
 The first argument is the field name, and the second the field value. Each field is added separately in this case and the field name is explicitly stated.
 If the field name already exists, its value will be overwritten.
@@ -178,7 +181,8 @@ SimpleBlock sb = new SimpleBlock("apple", "banana", "pear", "orange");
 would generate an input Block:
 (“C1”,”apple”); (“C2”,”banana”); (“C3”,”pear”); (“C4”,”orange”)
 
-3.Use a pipe to transform the Block
+3. Use a pipe to transform the Block
+
 Once the input Block has been defined, this is used as the input into the pipe being tested. To do this, a pipe is created, and this pipe is applied to the input Block.
 
 SimpleBlock sb = new SimpleBlock(); //create empty SimpleBlock sb.add("C1", "banana"); //first column
